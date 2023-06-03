@@ -60,3 +60,5 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 });
+
+Route::get('generate-pdf', [App\Http\Controllers\PDFController::class, 'generatePDF']);

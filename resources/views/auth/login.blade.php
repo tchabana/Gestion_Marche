@@ -6,7 +6,7 @@
         <div class="content pt-5">
             <div class="container mt-5">
                 <div class="col-md-4 col-sm-6 ml-auto mr-auto">
-                    <form class="form" method="POST" action="{{ route('login') }}" autocomplete="off">
+                    <form class="form" method="POST" action="{{ route('login') }}" autocomplete="off" novalidate>
                         @csrf
                         <div class="card card-login card-hidden">
                             <div class="card-header ">

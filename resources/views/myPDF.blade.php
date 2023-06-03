@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-
-<html lang="fr">
+<html>
 
 <head>
     <meta charset="utf-8" />
@@ -21,26 +20,48 @@
 </head>
 
 <body>
-    <div class="wrapper @if (
-        !auth()->check() ||
-            request()->route()->getName() == '') wrapper-full-page @endif">
-
-        @if (auth()->check() &&
-                request()->route()->getName() != '')
-            @include('layouts.navbars.sidebar')
-            @include('pages/sidebarstyle')
-        @endif
-
-        <div class="@if (auth()->check() &&
-                request()->route()->getName() != '') main-panel @endif">
-            @include('layouts.navbars.navbar')
-            @yield('content')
-            @include('layouts.footer.nav')
+    <header>
+        <div>
+            <h2>MINISTÈRE DE L' ADMINISTRATION TERRITORIALE
+                DE LA DÉCENTRALISATION ET DU DÉVELOPPEMENT
+                DES TERRITOIRES</h2>
         </div>
+    </header>
+    <h1>{{ $title }}</h1>
+    <h1>{{ $title }}</h1>
+    <p>{{ $date }}</p>
+    <p>{{ $date }}</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+    </p>
 
-    </div>
-
-
+    <table class="table table-bordered">
+        <table class="table table-bordered">
+            <tr>
+            <tr>
+                <th>ID</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Email</th>
+            </tr>
+            </tr>
+            @foreach ($users as $user)
+                <tr>
+                <tr>
+                    <td>{{ $user->id }}</td>
+                    <td>{{ $user->id }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->email }}</td>
+                </tr>
+                </tr>
+            @endforeach
+        </table>
+    </table>
 
 </body>
 <!--   Core JS Files   -->
@@ -61,8 +82,4 @@
 <script src="{{ asset('light-bootstrap/js/light-bootstrap-dashboard.js?v=2.0.0') }}" type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{ asset('light-bootstrap/js/demo.js') }}"></script>
-@stack('js')
-<script>
-</script>
-
 </html>
