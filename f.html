@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reçu de location</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .receipt {
+            border: 1px solid #ccc;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .receipt h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #333;
+        }
+
+        .receipt-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .receipt-info span {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .receipt-items {
+            margin-top: 20px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .item span {
+            flex-basis: 70%;
+            color: #333;
+        }
+
+        .item .price {
+            flex-basis: 30%;
+            text-align: right;
+            color: #333;
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .total span {
+            flex-basis: 70%;
+            color: #333;
+        }
+
+        .total .price {
+            flex-basis: 30%;
+            text-align: right;
+            color: #333;
+        }
+
+        .government-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .government-header .left-block {
+            text-align: left;
+        }
+
+        .government-header .right-block {
+            text-align: right;
+        }
+
+        .government-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .government-header p {
+            margin: 0;
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="government-header">
+        <div class="left-block">
+            <h3>MINISTÈRE DE L'ADMINISTRATION TERRITORIALE</h3>
+            <h3>DE LA DÉCENTRALISATION ET DU DÉVELOPPEMENT</h3>
+            <h3>DES TERRITOIRES</h3>
+            <p>Travail-Liberté-Patrie</p>
+        </div>
+        <div class="right-block">
+            <h3>RÉPUBLIQUE TOGOLAISE</h3>
+            <h3>REGION CENTRALE</h3>
+            <h3>COMMUNE DE TCHAOUDJO 1</h3>
+            <h3>N°/CT1</h3>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>Reçu de location</h1>
+        <p>Marché de Tchaoudjo1</p>
+    </div>
+
+    <div class="receipt">
+        <h2>Détails de la location</h2>
+
+        <div class="receipt-info">
+            <span>Date :</span>
+            <span>{{ $receipt->date }}</span>
+        </div>
+
+        <div class="receipt-info">
+            <span>Nom du vendeur :</span>
+            <span>{{ $receipt->vendor_name }}</span>
+        </div>
+
+        <div class="receipt-info">
+            <span>Place attribuée :</span>
+            <span>{{ $receipt->place_number }}</span>
+        </div>
+
+        <div class="receipt-info">
+            <span>Durée de location :</span>
+            <span>{{ $receipt->duration }}</span>
+        </div>
+
+        <div class="receipt-items">
+            <div class="item">
+                <span>Montant de la location :</span>
+                <span class="price">{{ $receipt->rent_amount }}</span>
+            </div>
+
+            <div class="item">
+                <span>Caution :</span>
+                <span class="price">{{ $receipt->deposit_amount }}</span>
+            </div>
+        </div>
+
+        <div class="total">
+            <span>Total :</span>
+            <span class="price">{{ $receipt->total_amount }}</span>
+        </div>
+    </div>
+</body>
+
+</html>

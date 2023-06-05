@@ -61,4 +61,4 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 });
 
-Route::get('generate-pdf', [App\Http\Controllers\PDFController::class, 'generatePDF']);
+Route::get('generate-pdf', [App\Http\Controllers\PDFController::class, 'generatePDF'])->name('imprimer');

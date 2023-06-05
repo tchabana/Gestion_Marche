@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('light-bootstrap/img/logoIfnti.png') }}">
-    <link rel="icon" type="image/png" href="{{ asset('light-bootstrap/img/logoIfnti.png') }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('light-bootstrap/img/togo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('light-bootstrap/img/togo.png') }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Best Programer</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'

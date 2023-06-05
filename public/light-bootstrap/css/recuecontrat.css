@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.receipt {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.receipt h2 {
+    text-align: center;
+    margin-top: 0;
+    color: #333;
+}
+
+.receipt-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.receipt-info span {
+    font-weight: bold;
+    color: #666;
+}
+
+.receipt-items {
+    margin-top: 20px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.item span {
+    flex-basis: 70%;
+    color: #333;
+}
+
+.item .price {
+    flex-basis: 30%;
+    text-align: right;
+    color: #333;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.total span {
+    flex-basis: 70%;
+    color: #333;
+}
+
+.total .price {
+    flex-basis: 30%;
+    text-align: right;
+    color: #333;
+}
+
+.government-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.government-header .left-block {
+    text-align: left;
+}
+
+.government-header .right-block {
+    text-align: right;
+}
+
+.government-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.government-header p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}

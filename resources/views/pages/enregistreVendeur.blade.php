@@ -80,9 +80,8 @@
                         <button type="submit" class="btn btn-default mt-4">{{ __('Suivant') }}</button>
                     </div>
                 </div>
+            </form>
         </div>
-        </form>
-    </div>
     </div>
 @endsection
 

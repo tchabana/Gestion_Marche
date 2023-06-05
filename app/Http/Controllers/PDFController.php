@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\contrats;
+use App\Models\places;
+use App\Models\commercants;
 use PDF;
 class PDFController extends Controller
 {
@@ -12,15 +14,16 @@ class PDFController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function generatePDF()
+    public function generatePDF(Request $request)
     {
-        $users = User::get();
+        //dd($request);
         $data = [
-            'title' => 'Welcome to ItSolutionStuff.com',
+            'commercant' => commercants::find($request->matricule),
             'date' => date('m/d/Y'),
-            'users' => $users,
+            'place' => places::find($request->place),
+            'prixad' => $request->prixad,
         ];
-        $pdf = PDF::loadView('myPDF', $data);
+        $pdf = PDF::loadView('myPDF',$data);
         return $pdf->download('itsolutionstuff.pdf');
         //$pdf->stream();
     }
