@@ -13,7 +13,6 @@
                         <div class="card-body table-full-width table-responsive">
                             <table class="table table-hover">
                                 <thead>
-                                    <th>ID</th>
                                     <th>Nom</th>
                                     <th>Prenom</th>
                                     <th>Date Naiss</th>
@@ -24,8 +23,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($data['commercants'] as $cm)
-                                        <tr>
-                                            <td> {{ $cm->id }}</td>
+                                        <tr class="clickable-row" data-href="{{ route('commercant.edit', ['id' => $cm->id]) }}">
                                             <td> {{ $cm->nom }} </td>
                                             <td> {{ $cm->prenom }}</td>
                                             <td> {{ $cm->datenaiss }} </td>
@@ -35,6 +33,7 @@
                                             <td> {{ $cm->ville }} </td>
                                             <td> {{ $cm->created_at }} 1</td>
                                             <td> {{ $cm->idplace }}</td>
+                                            <input type="hidden" name="id" value="{{$cm->id}}">
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -45,4 +44,5 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset("js/table.js")}} " defer></script>
 @endsection

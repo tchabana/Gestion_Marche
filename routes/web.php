@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,25 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+	return view('auth.login');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Auth::routes();
+Route::get('/commercant-{id}', [App\Http\Controllers\CommercantsController::class, 'comEdit'])->name('commercant.edit');
 
 Route::get('/enregistreVendeur', 'App\Http\Controllers\HomeController@funcEnregistreVendeur')->name('enregistreVendeur');
 Route::post('/enregistreVendeur', 'App\Http\Controllers\HomeController@crerVendeur')->name('enregistreVendeur');
